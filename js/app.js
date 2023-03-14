@@ -91,14 +91,13 @@ document.getElementById('btn-show-all').addEventListener('click', function () {
 
 const loadPhoneDetails = async id => {
     const url = `https://openapi.programming-hero.com/api/phone/${id}`;
-    console.log(url);
     const res = await fetch(url);
     const data = await res.json();
     displayPhoneDetails(data.data);
 }
 
 const displayPhoneDetails = phone => {
-    console.log(phone);
+    console.log(phone.name);
     const modalTitle = document.getElementById('phoneDetailModalLabel');
     modalTitle.innerText = phone.name;
     const phoneDetails = document.getElementById('phone-details');
