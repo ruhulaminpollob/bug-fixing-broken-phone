@@ -106,7 +106,7 @@ const displayPhoneDetails = phone => {
         <p>Release Date: ${phone.releaseDate}</p>
         <p>Storage: ${phone.mainFeatures.storage}</p>
         <p>Others: ${phone.others ? phone.others.Bluetooth : 'No Bluetooth Information'}</p>
-        <p>Sensor: ${phone.mainFeatures.sensors ? phone.mainFeatures.sensors[0] : 'no sensor'}</p>
+        <p>Sensor: ${phone.mainFeatures.sensors ? phone.mainFeatures.sensors.map(sensor=>sensor) : 'no sensor'}</p>
     `
 }
 
