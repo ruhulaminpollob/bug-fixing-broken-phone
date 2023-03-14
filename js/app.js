@@ -55,7 +55,12 @@ const processSearch = (dataLimit) =>{
     toggleSpinner(true);
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
-    loadPhones(searchText, dataLimit);
+    if (searchText===[]) {
+        loadPhones('apple')
+    }
+    else{
+        loadPhones(searchText, dataLimit);
+    }
 }
 
 // handle search button click
