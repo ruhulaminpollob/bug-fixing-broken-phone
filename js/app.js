@@ -10,14 +10,14 @@ const displayPhones = (phones, dataLimit) =>{
     // phonesContainer.textContent = '';
     // display 10 phones only 
     const showAll = document.getElementById('show-all');
-    console.log(phones.length);
-    if(dataLimit && phones.length > 10) {
+    if(dataLimit===10 && phones.length > 10) {
         phones = phones.slice(0, 10);
         showAll.classList.remove('d-none');
     }
     else{
         showAll.classList.add('d-none');
     }
+    console.log(phones);
     
 
     // display no phones found
@@ -29,10 +29,10 @@ const displayPhones = (phones, dataLimit) =>{
         noPhone.classList.add('d-none');
     }
     // display all phones
+    phonesContainer.innerHTML=''
     phones.forEach(phone =>{
         const phoneDiv  = document.createElement('div');
         phoneDiv.classList.add('col');
-        phoneDiv.innerHTML='';
         phoneDiv.innerHTML = `
         <div class="card p-4">
             <img src="${phone.image}" class="card-img-top" alt="...">
@@ -44,6 +44,7 @@ const displayPhones = (phones, dataLimit) =>{
             </div>
         </div>
         `;
+        
         phonesContainer.appendChild(phoneDiv);
     });
     // stop spinner or loader
@@ -108,4 +109,4 @@ const displayPhoneDetails = phone =>{
     `
 }
 
-loadPhones('apple');
+loadPhones('apple',10);
