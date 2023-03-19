@@ -97,11 +97,9 @@ const loadPhoneDetails = async id => {
 }
 
 const displayPhoneDetails = phone => {
-    console.log(phone);
     const modalTitle = document.getElementById('phoneDetailModalLabel');
     modalTitle.innerText = phone.name;
     const phoneDetails = document.getElementById('phone-details');
-    console.log(phone.mainFeatures.sensors[0]);
     phoneDetails.innerHTML = `
         <p>Release Date: ${phone.releaseDate}</p>
         <p>Storage: ${phone.mainFeatures.storage}</p>
